@@ -1,0 +1,98 @@
+<head>
+  <%- include ('../partials/head')%>
+</head>
+<main class="w-full h-screen flex">
+  <%- include ('../partials/leftNavAdmin')%>
+  
+    <div class="w-full pt-8 px-8 overflow-y-auto">
+      <%- include ('../partials/navBar')%>
+  
+      <div class="mt-8 py-8 w-full flex justify-center overflow-auto">
+        <div class="flex flex-col w-1/2">
+          <h1 class="text-2xl font-bold mb-4">Projectos</h1>
+  
+          <div class="flex flex-col mt-6 mb-10">
+            <div class="-my-2 overflow-x-auto -mx-8">
+              <div class="inline-block min-w-full py-2 align-middle px-8">
+                <div class="overflow-hidden border border-gray-200 rounded-md">
+                  <table class="min-w-full divide-y divide-gray-100">
+                    <thead class="bg-gray-200">
+                      <tr>
+                        <th scope="col"
+                          class="py-3.5 px-4 text-sm font-normal text-left text-gray-800">                   
+                            Nome
+                        </th>
+  
+                        <th scope="col"
+                          class="px-4 py-3.5 text-sm font-normal text-left text-gray-800">
+                          Descrição
+                        </th>
+  
+                        <th scope="col"
+                          class="px-4 py-3.5 text-sm font-normal text-left text-gray-800">
+                          Ações
+                        </th>
+  
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 bg-gray-50">
+                      <tr>
+                        <td class="px-4 py-4 text-sm font-medium">
+                          <div>
+                            <p class="text-sm font-normal text-gray-600">getcirooles.com</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4 text-sm">
+                          <div>
+                            <p class="text-gray-500">Super lightweight design app kfksfnskf sldjsljdlskd ldkssjdljskldj dslkjdlksjlksdj sdkjlsdjslkdj sdlkjdlkdsjlksjdlks</p>
+                          </div>
+                        </td>
+  
+                        <td class="px-4 py-4 text-sm flex gap-2">
+                           <div class="w-8 h-8 flex items-center justify-center text-xl text bg-green-400 rounded">
+                              <a href="/admin/edit_data"><i class="ph ph-pencil"></i></a>
+                          </div>
+                          <div class="w-8 h-8 flex items-center justify-center text-xl text bg-red-400 rounded">
+                              <i class="ph ph-trash"></i>
+                          </div>
+                        </td>
+                      </tr>
+  
+                      <tr>
+                        <td class="px-4 py-4 text-sm font-medium">
+                          <div>
+                            <p class="text-sm font-normal text-gray-600">getcirooles.com</p>
+                          </div>
+                        </td>
+                        <td class="px-4 py-4 text-sm">
+                          <div>
+                            <p class="text-gray-500">Super lightweight design app kfksfnskf sldjsljdlskd ldkssjdljskldj dslkjdlksjlksdj sdkjlsdjslkdj sdlkjdlkdsjlksjdlks</p>
+                          </div>
+                        </td>
+  
+                        <td class="px-4 py-4 text-sm flex gap-2">
+                          <div class="w-8 h-8 flex items-center justify-center text-xl text bg-green-400 rounded">
+                              <i class="ph ph-pencil"></i>
+                            
+                          </div>
+                          <div class="w-8 h-8 flex items-center justify-center text-xl text bg-red-400 rounded">
+                            <i class="ph ph-trash"></i>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="block">
+            <a href="/user/projects/add"
+              class="py-4 px-5 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600">Novo
+              Projecto
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
