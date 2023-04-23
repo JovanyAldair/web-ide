@@ -1,0 +1,22 @@
+.p-note {
+  color: red;
+}
+
+.p-note::before {
+  background-color: #666666;
+  content: "";
+  display: block;
+  height: 1rem;
+  left: 1rem;
+  -webkit-mask-image: url('https://developer.mozilla.org/static/media/note-info.0eafb6e7738509bce66e.svg');
+  mask-image: url('https://developer.mozilla.org/static/media/note-info.0eafb6e7738509bce66e.svg');
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  position: absolute;
+  top: 1.5rem;
+  width: 1rem;
+}
