@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 8000
+const port = 8002
 const ide = require("./routes/ide")
 const admin = require("./routes/admin")
 const users = require("./routes/users")
@@ -24,6 +24,6 @@ app.use('/course', course)
 
 
 
-app.listen(port, ()=>{
+app.listen(port, () => {
     console.log('servidor rodando...')
 })

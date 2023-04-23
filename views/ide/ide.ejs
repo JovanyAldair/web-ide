@@ -1,90 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-  <%- include ('../partials/head')%>
-  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Raleway:wght@300&family=Silkscreen&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'><link rel="stylesheet" href="./style.css">
+  <head>
+    <%- include ('../partials/head')%>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"
+      --
+    />
+    />
+    <link rel="stylesheet" href="./style.css" />
 
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="desktop.css">
-</head>
-<body>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="desktop.css" />
+  </head>
+  <body>
+    <%- include ('../partials/navBar')%>
 
-  <!-- header  -->
-  <header class="header">
-    <input class="input" id="inputFileNameToSaveAs" placeholder="Enter Name" value="index.html" autocomplete="off">
-  </header>
+    <!-- main box  -->
+    <section class="container-main" id="mainbox">
+      <div class="main">
+        <!-- header  -->
+        <header class="header">
+          <div class="file">
+            <label for="inputFileNameToSaveAs">Salvar como:</label>
+            <input
+              class="input"
+              id="inputFileNameToSaveAs"
+              placeholder="Enter Name"
+              value="index.html"
+              autocomplete="off"
+            />
+          </div>
+          <div class="button">
+            <button class="runbtn" id="runbtn" onclick="runcode()">RUN</button>
+            <button id="copybtn" onclick="myFunction()">COPY</button>
+            <button id="downbtn" onclick="saveTextAsFile()">DOWNLOAD</button>
+          </div>
+        </header>
+        <textarea
+          id="inputTextToSave"
+          class="codebox"
+          placeholder="Write Here Code"
+        >
+&lt;h1&gt;Hello, PD.io&lt;/h1&gt;
+      </textarea
+        >
+        <footer class="footer-main">
+          <div class="loadfile">
+            <input type="file" id="fileUpload" />
+          </div>
+        </footer>
+      </div>
+    </section>
 
-  <!-- main box  -->
-  <section class="main" id="mainbox">
-    <textarea id="inputTextToSave" class="codebox" placeholder="Write Here Code">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
-&lt;title&gt;Project X&lt;/title&gt;
-&lt;style&gt;
-
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
- &lt;h1&gt;Hello, Amit&lt;/h1&gt;             
-&lt;script&gt;
-
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-    </textarea>
-    <div class="button">
-      <button class="runbtn" id="runbtn" onclick="runcode()">RUN</button>
-      <button id="copybtn" onclick="myFunction()">COPY</button>
-      <button id="downbtn" onclick="saveTextAsFile()">DOWNLOAD</button>
+    <!-- output display  -->
+    <div class="output-container">
+      <div id="output">
+        <button class="backbtn" onclick="back()">Back</button>
+        <iframe id="display"></iframe>
+      </div>
     </div>
-    <div class="loadfile">
-      <input type="file" id="fileUpload" />
-    </div>
-  </section>
 
-  <!-- output display  -->
-  <div id="output">
-    <button class="backbtn" onclick="back()">Back</button>
-    <iframe id="display"></iframe>
-  </div>
-
-  <!-- footer  -->
-  <footer id="footer">
-    <div class="copyright" >
-        </div>
+    <!-- footer  -->
+    <footer id="footer">
+      <div class="copyright"></div>
     </footer>
-    
-  <!-- Project -->
-  <script>
-function saveTextAsFile(){
-	var textToSave = document.getElementById("inputTextToSave").value;
-	var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
-	var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
-	var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
 
-	var downloadLink = document.createElement("a");
-	downloadLink.download = fileNameToSaveAs;
-	downloadLink.innerHTML = "Download File";
-	downloadLink.href = textToSaveAsURL;
-	downloadLink.onclick = destroyClickedElement;
-	downloadLink.style.display = "none";
-	document.body.appendChild(downloadLink);
-
-	downloadLink.click();
-}
-
-function destroyClickedElement(event){
-	document.body.removeChild(event.target);
-}
-
-
-  </script>
-  <script src="main.js"></script>
-</body>
+    <!-- Project -->
+    <script src="main.js"></script>
+  </body>
 </html>
 
 <!--
@@ -92,5 +80,3 @@ font-family: 'Dosis', sans-serif;
 font-family: 'Silkscreen', cursive;
 font-family: 'Raleway', sans-serif;
 -->
-
-
