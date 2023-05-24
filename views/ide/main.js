@@ -1,10 +1,10 @@
 function saveTextAsFile() {
-  var textToSave = document.getElementById("inputTextToSave").value;
-  var textToSaveAsBlob = new Blob([textToSave], { type: "text/plain" });
-  var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
-  var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
+  const textToSave = document.getElementById("inputTextToSave").value;
+  const textToSaveAsBlob = new Blob([textToSave], { type: "text/plain" });
+  const textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+  const fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
 
-  var downloadLink = document.createElement("a");
+  const downloadLink = document.createElement("a");
   downloadLink.download = fileNameToSaveAs;
   downloadLink.innerHTML = "Download File";
   downloadLink.href = textToSaveAsURL;
@@ -17,4 +17,19 @@ function saveTextAsFile() {
 
 function destroyClickedElement(event) {
   document.body.removeChild(event.target);
+}
+
+const back = document.querySelector(".backbtn");
+
+back.addEventListener("click", function () {
+  console.log("Back");
+})
+
+console.log(back)
+
+function backPage() {
+  const home = document.querySelector("#mainbox");
+  const code = document.querySelector("#output");
+
+  alert('Teste')
 }

@@ -1,8 +1,18 @@
-<header
-  class="sticky top-0 w-full h-16 shadow backdrop-blur-sm rounded-lg overflow-hidden z-10"
->
-  <nav class="w-full h-full mx-auto flex gap-8 items-center overflow-hidden">
-    <ul class="flex">
+<header class="sticky top-0 w-full h-16 bg-white shadow backdrop-blur z-10">
+  <nav
+    class="w-full h-full px-4 mx-auto flex gap-8 items-center justify-between"
+  >
+    <ul class="flex items-center">
+      <div class="mr-5 flex items-center">
+        <lord-icon
+          src="https://cdn.lordicon.com/ochimkct.json"
+          trigger="hover"
+          colors="primary:#121331,secondary:#08a88a"
+          style="width: 60px; height: 60px"
+        >
+        </lord-icon>
+        <span class="text-xl"> PD.io </span>
+      </div>
       <li>
         <a
           href=""
@@ -25,5 +35,97 @@
         >
       </li>
     </ul>
+    <div id="ideMenu" class="flex gap-4">
+      <div class="relative">
+        <button
+          onclick="droparea()"
+          id="dropdownButton"
+          class="text-white bg-[#9c9c9c] hover:bg-[#bbbbbb] transition duration-600 ease-in-out rounded-md text-base px-4 py-2 text-center inline-flex items-center"
+          type="button"
+        >
+          Export
+          <svg
+            class="w-4 h-4 ml-2"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <!-- Dropdown menu -->
+        <div
+          id="dropdown"
+          class="z-10 absolute top-14 hidden bg-white divide-y divide-gray-100 shadow w-44"
+        >
+          <ul
+            class="py-2 text-sm text-gray-700 dark:text-gray-200"
+            aria-labelledby="dropdownDefaultButton"
+          >
+            <li>
+              <a
+                onclick="myFunction()"
+                class="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >Copiar</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >PArtilhar link</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >Earnings</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >Sign out</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button id="downbtn" class="" onclick="saveTextAsFile()">Download</button>
+    </div>
   </nav>
 </header>
+
+<script>
+  const { pathname } = window.location;
+  const ideMenu = document.querySelector("#ideMenu");
+  const dropdown = document.querySelector("#dropdownButton");
+  const dropmenu = document.querySelector("#dropdown");
+
+  if (pathname === "/ide") {
+    ideMenu.classList.remove("hidden");
+    ideMenu.classList.add("block");
+  } else {
+    ideMenu.classList.remove("block");
+    ideMenu.classList.add("hidden");
+  }
+
+  function droparea() {
+    dropmenu.classList.toggle("hidden");
+  }
+
+  // dropdown.addEventListener("click", () => {
+
+  //   console.log('Clicked');
+
+  // });
+</script>

@@ -2,6 +2,7 @@
 <html lang="pt">
   <head>
     <%- include ('../partials/head')%>
+    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
@@ -10,7 +11,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"
       --
-    />
     />
     <link rel="stylesheet" href="./style.css" />
 
@@ -37,8 +37,6 @@
           </div>
           <div class="button">
             <button class="runbtn" id="runbtn" onclick="runcode()">RUN</button>
-            <button id="copybtn" onclick="myFunction()">COPY</button>
-            <button id="downbtn" onclick="saveTextAsFile()">DOWNLOAD</button>
           </div>
         </header>
         <textarea
@@ -60,7 +58,9 @@
     <!-- output display  -->
     <div class="output-container">
       <div id="output">
-        <button class="backbtn" onclick="back()">Back</button>
+        <div class="header">
+          <button class="backbtn" onclick="backPage()">Voltar</button>
+        </div>
         <iframe id="display"></iframe>
       </div>
     </div>
@@ -72,6 +72,17 @@
 
     <!-- Project -->
     <script src="main.js"></script>
+    <script>
+      function backPage() {
+        const home = document.querySelector("#mainbox");
+        const header = document.querySelector("#mainbox header");
+        const code = document.querySelector("#output");
+
+        code.style.removeProperty("display");
+        home.style.removeProperty("display");
+        header.style.removeProperty("display");
+      }
+    </script>
   </body>
 </html>
 
